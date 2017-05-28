@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Novo Correntista - Banco Tois</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de correntista</h1>
+	<p:separator />
+	<h:form>
+	<p:panelGrid columns="2">
+	
+	<p:outputLabel for="inputNome" value="Nome:" indicateRequired="true" />
+	<p:inputText id="inputNome" value="#{CorrentistaMB.correntistaAtual.nome}" />
+	
+	<p:outputLabel for="inputSnome" value="Sobrenome:" indicateRequired="true" />
+	<p:inputText id="inputSnome" value="#{CorrentistaMB.correntistaAtual.sobrenome}" />
+	
+	<p:outputLabel for="inputRG" value="RG:" indicateRequired="true" />
+	<p:inputText id="inputRG" value="#{CorrentistaMB.correntistaAtual.RG}" />
+	
+	<p:outputLabel for="inputCPF" value="CPF:" indicateRequired="true" />
+	<p:inputText id="inputCPF" value="#{CorrentistaMB.correntistaAtual.CPF}" />
+	
+	<p:outputLabel for="inputEndereco" value="Endereco:" indicateRequired="true" />
+	<p:inputText id="inputEndereco" value="#{CorrentistaMB.correntistaAtual.endereco}" />
+	
+	<p:outputLabel for="inputFamiliar" value="Nome Familiar:" indicateRequired="false" />
+	<p:inputText id="inputFamiliar" value="#{CorrentistaMB.correntistaAtual.familiar}" />
+	
+	<p:outputLabel for="inputGparentesco" value="Grau de Parentesco:" indicateRequired="false" />
+	<p:inputText id="inputGparentesco" value="#{CorrentistaMB.correntistaAtual.grauParentesco}" />
+	
+	<p:selectOneRadio value="#{CorrentistaMB.correntistaAtual.emprego}">
+			<f:selectItem itemValue="1" itemLabel="Empregado" />
+			<f:selectItem itemValue="0" itemLabel="Desempregado" />
+	</p:selectOneRadio>			
+		
+	</p:panelGrid>
+	</h:form>
+	
+	<h1>Cadastro de Conta</h1>
+	<p:separator />
+	<h:form>
+		<h3>Dados de Conta</h3>
+		<p:selectOneRadio value="#{contaMB.conta.tipoConta}">
+			<f:selectItem itemValue="Conta Corrente" itemLabel="Conta Corrente" />
+			<f:selectItem itemValue="Conta Poupança" itemLabel="Conta Poupança" />
+		</p:selectOneRadio>
+		
+		<p:outputLabel for="inputNumConta" value="Numero Conta:" indicateRequired="true" />
+	    <p:inputText id="inputNumConta" value="#{ContaMB.contaAtual.numConta}" />
+	
+		<p:outputLabel for="inputAnuidade" value="Anuidade:" indicateRequired="true" />
+	    <p:inputText id="inputAnuidade" value="#{ContaMB.contaAtual.anuidade}" />
+	
+		
+		<p:outputLabel for="inputAnuidade" value="Anuidade:" indicateRequired="true" />
+	    <p:inputText id="inputAnuidade" value="#{ContaMB.contaAtual.anuidade}" />
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</h:body>
+</html>

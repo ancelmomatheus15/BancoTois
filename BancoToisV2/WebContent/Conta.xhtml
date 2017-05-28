@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Conta - Banco Tois</title>
+</h:head>
+
+<h:body>
+	<p:outputLabel value="Bem vindo #{ContaMB.contaAtual.titular.nome} !" />
+	<h:form>
+	<h:panelGrid columns="2">
+	
+		<h:outputLabel value="Correntista:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.titular.nome}"/>
+		
+		<h:outputLabel value="Numero da Conta:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.numConta}"/>
+		
+		<h:outputLabel value="Numero da Agencia:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.numAgencia}"/>
+		
+		<h:outputLabel value="Tipo:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.tipo}"/>
+		
+		<h:outputLabel value="Taxa:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.taxa}"/>
+		
+		<h:outputLabel value="Anuidade:"/>
+		<h:outputLabel value="#{ContaMB.contaAtual.anuidade}"/>
+		
+		<p:separator />
+		
+		<p:outputLabel value="Saldo: #{contaMB.conta.saldo}" />
+			
+	</h:panelGrid>
+	</h:form>
+	
+	<p:commandButton value="Depositar" action="#{OperacoesMB.depositar}"/>
+	<p:commandButton value="Transferir" action="#{OperacoesMB.transferir}"/>
+	
+</h:body>
+</html>
