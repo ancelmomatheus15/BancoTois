@@ -10,70 +10,74 @@
 </h:head>
 <h:body>
 	<h1>Cadastro de correntista</h1>
-	<p:separator />
 	<h:form>
-	<p:panelGrid columns="2">
-	
-	<p:outputLabel for="inputNome" value="Nome:" indicateRequired="true" />
-	<p:inputText id="inputNome" value="#{CorrentistaMB.correntistaAtual.nome}" />
-	
-	<p:outputLabel for="inputSnome" value="Sobrenome:" indicateRequired="true" />
-	<p:inputText id="inputSnome" value="#{CorrentistaMB.correntistaAtual.sobrenome}" />
-	
-	<p:outputLabel for="inputRG" value="RG:" indicateRequired="true" />
-	<p:inputText id="inputRG" value="#{CorrentistaMB.correntistaAtual.RG}" />
-	
-	<p:outputLabel for="inputCPF" value="CPF:" indicateRequired="true" />
-	<p:inputText id="inputCPF" value="#{CorrentistaMB.correntistaAtual.CPF}" />
-	
-	<p:outputLabel for="inputEndereco" value="Endereco:" indicateRequired="true" />
-	<p:inputText id="inputEndereco" value="#{CorrentistaMB.correntistaAtual.endereco}" />
-	
-	<p:outputLabel for="inputFamiliar" value="Nome Familiar:" indicateRequired="false" />
-	<p:inputText id="inputFamiliar" value="#{CorrentistaMB.correntistaAtual.familiar}" />
-	
-	<p:outputLabel for="inputGparentesco" value="Grau de Parentesco:" indicateRequired="false" />
-	<p:inputText id="inputGparentesco" value="#{CorrentistaMB.correntistaAtual.grauParentesco}" />
-	
-	<p:selectOneRadio value="#{CorrentistaMB.correntistaAtual.emprego}">
-			<f:selectItem itemValue="1" itemLabel="Empregado" />
-			<f:selectItem itemValue="0" itemLabel="Desempregado" />
-	</p:selectOneRadio>			
+	<h:panelGrid columns="2">
 		
-	</p:panelGrid>
+		<h:outputLabel value="Nome:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.nome}"/>
+	
+		<h:outputLabel value="Sobrenome:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.sobrenome}"/>
+		
+		<h:outputLabel value="RG:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.RG}"/>
+		
+		<h:outputLabel value="CPF:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.CPF}"/>
+		
+		<h:outputLabel value="Endereco:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.endereco}"/>
+		
+		<h:outputLabel value="Nome de Familiar:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.Familiar}"/>
+		
+		<h:outputLabel value="Grau de Parentesco:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.grauParentesco}"/>
+		
+		<h:outputLabel value="Nome de Familiar:"/>
+		<h:inputText value="#{CorrentistaMB.correntistaAtual.Familiar}"/>
+				
+	</h:panelGrid>
+	
+	<h3>Emprego</h3>
+			<h:selectOneRadio value="#{CorrentistaMB.correntistaAtual.emprego}">
+				<f:selectItem itemValue="1" itemLabel="Sim" />
+				<f:selectItem itemValue="0" itemLabel="Nao" />
+		    </h:selectOneRadio>
+	
+	
 	</h:form>
+	<br/>
 	
 	<h1>Cadastro de Conta</h1>
-	<p:separator />
 	<h:form>
+	
 		<h3>Dados de Conta</h3>
-		<p:selectOneRadio value="#{contaMB.conta.tipoConta}">
-			<f:selectItem itemValue="Conta Corrente" itemLabel="Conta Corrente" />
-			<f:selectItem itemValue="Conta Poupança" itemLabel="Conta Poupança" />
-		</p:selectOneRadio>
+			<h:selectOneRadio value="#{ContaMB.conta.tipoConta}">
+				<f:selectItem itemValue="Conta Corrente" itemLabel="Conta Corrente" />
+				<f:selectItem itemValue="Conta Poupança" itemLabel="Conta Poupança" />
+			</h:selectOneRadio>
 		
-		<p:outputLabel for="inputNumConta" value="Numero Conta:" indicateRequired="true" />
-	    <p:inputText id="inputNumConta" value="#{ContaMB.contaAtual.numConta}" />
+		<h:panelGrid columns="2">
+		
+		<h:outputLabel value="Numero da Conta:"/>
+		<h:inputText value="#{ContaMB.contaAtual.numConta}"/>
+		
+		<h:outputLabel value="Valor Anuidade:"/>
+		<h:inputText value="#{ContaMB.contaAtual.anuidade}"/>
+		
+		<h:outputLabel value="Taxa:"/>
+		<h:inputText value="#{ContaMB.contaAtual.taxa}"/>
+		
+		</h:panelGrid>
+	</h:form>
 	
-		<p:outputLabel for="inputAnuidade" value="Anuidade:" indicateRequired="true" />
-	    <p:inputText id="inputAnuidade" value="#{ContaMB.contaAtual.anuidade}" />
+	<br/>
+	<br/>
 	
-		
-		<p:outputLabel for="inputAnuidade" value="Anuidade:" indicateRequired="true" />
-	    <p:inputText id="inputAnuidade" value="#{ContaMB.contaAtual.anuidade}" />
+	<h:commandButton value="Salvar" action="#{CorrentistaMB.salvar}" />
+	<h:commandLink value="Nova Conta" action="Correntista" />
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 </h:body>
 </html>

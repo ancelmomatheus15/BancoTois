@@ -9,7 +9,13 @@
 </h:head>
 
 <h:body>
-	<p:outputLabel value="Bem vindo #{ContaMB.contaAtual.titular.nome} !" />
+
+	<h1>Sua Conta</h1>
+
+	<h:outputLabel value="Bem vindo #{ContaMB.contaAtual.titular.nome} !" />
+	
+
+	
 	<h:form>
 	<h:panelGrid columns="2">
 	
@@ -31,15 +37,18 @@
 		<h:outputLabel value="Anuidade:"/>
 		<h:outputLabel value="#{ContaMB.contaAtual.anuidade}"/>
 		
-		<p:separator />
+		<h:outputLabel value="Anuidade:"/>
+		<h:outputLabel value="#{ContaMB.conta.saldo}" />
 		
-		<p:outputLabel value="Saldo: #{contaMB.conta.saldo}" />
+		<h:commandButton value="Depositar" action="#{OperacoesMB.depositar}"/>
+		<h:commandButton value="Transferir" action="#{OperacoesMB.transferir}"/>
+		
+		<h:commandButton value="Sair" action="#{OperacoesMB.sair}"/>
 			
 	</h:panelGrid>
 	</h:form>
 	
-	<p:commandButton value="Depositar" action="#{OperacoesMB.depositar}"/>
-	<p:commandButton value="Transferir" action="#{OperacoesMB.transferir}"/>
+	
 	
 </h:body>
 </html>

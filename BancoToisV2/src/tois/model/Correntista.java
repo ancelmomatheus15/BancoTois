@@ -1,4 +1,4 @@
-package tois.model;
+	package tois.model;
 
 import javax.persistence.*;
 
