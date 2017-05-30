@@ -44,6 +44,27 @@ public class CtrlConta{
 		return null;
 	}
 	
+	public static Conta buscaConta(int numConta){
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManager em = factory.createEntityManager();
+		
+		try{
+			Query query = em.createQuery
+					("SELECT conta FROM Conta conta where"
+							+ "conta =: acc");
+			query.setParameter("acc", numConta);
+			
+			List<Conta> contas = query.getResultList();
+			
+			if(contas != null && contas.size()>0){
+				return contas.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 }
 

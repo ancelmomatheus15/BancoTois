@@ -1,5 +1,7 @@
 package DAO;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -44,17 +46,27 @@ public class CtrlCliente {
 			log = "Valores inválidos";
 		}
 	}
-//	
-//	private boolean readCliente(){
-//		return false;
-//	}
-//	
-//	private boolean attCliente(){
-//		return false;
-//	}
-//	
-//	private boolean delCliente(){
-//		return false;
-//	}
+	
+	private static Correntista readCliente(String CPF){
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManager em = factory.createEntityManager();
+		
+		try{
+			Query query = em.createQuery
+					("SELECT correntista FROM Correntistas where"
+							+ "CPF =: cpf");
+			query.setParameter("cpf", CPF);
+			
+			List<Correntista> lista = query.getResultList();
+			
+			if(lista != null && lista.size()>0){
+				return lista.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 }
