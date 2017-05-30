@@ -3,6 +3,7 @@ package tois.control;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import DAO.CtrlConta;
 import tois.model.Conta;
 
 @ManagedBean
@@ -20,12 +21,27 @@ public class ContaMB {
 	}
 
 	public String salvar() {
-		System.out.println("conta gerada : " + contaAtual.getNumConta());
-		return "conta";
+		String confirm;
+		CtrlConta.addConta(contaAtual);
+		confirm = "Conta?faces-redirect=true";
+		
+		return confirm;
 	}
 	
 	public String sair(){
 		contaAtual = null;
 		return "login";
+	}
+	
+	public String Login(){
+		String confirm = "";
+		
+		contaAtual = CtrlConta.login(contaAtual.getNumConta(), contaAtual.getSenha());
+		if(contaAtual != null){
+			confirm = "Conta?faces-redirect=true";
+		}else{
+			confirm = "Home";
+		}
+		return confirm;
 	}
 }
