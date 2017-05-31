@@ -13,7 +13,7 @@ import tois.model.Correntista;
 public class CtrlCliente {
 	
 	public static void addCorrentista(Correntista novoCorrentista){
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(novoCorrentista);

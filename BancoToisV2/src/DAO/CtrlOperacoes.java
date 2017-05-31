@@ -11,7 +11,7 @@ public class CtrlOperacoes{
 	public static boolean transferencia(Conta conta){
 		boolean confirm = false;
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		
 		

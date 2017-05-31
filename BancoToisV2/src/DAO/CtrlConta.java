@@ -13,7 +13,7 @@ public class CtrlConta{
 	
 	public static void addConta(Conta novaConta){
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOT");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(novaConta);
