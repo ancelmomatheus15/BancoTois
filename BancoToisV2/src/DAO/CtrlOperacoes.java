@@ -8,18 +8,25 @@ import tois.model.Conta;
 
 public class CtrlOperacoes{
 	
-	public static boolean transferencia(Conta conta){
+	public static boolean transferencia(int numConta, double valor, String senha){
 		boolean confirm = false;
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		
-		
-		
-		
 		return confirm;
 	}
+	
+	public static boolean deposito(int numConta, double valor, String senha){
+		
+		return false;
+	}
 }
+
+/*
+ * calcular imposto com a taxa e as confirmações pro usuario
+ * fazer as validações
+ */
 
 
 
