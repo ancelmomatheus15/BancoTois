@@ -14,15 +14,15 @@ public class Correntista {
 	private String grauParentesco;
 	private boolean emprego;
 	
-	@TableGenerator(name="genId",
-					table="sequences",
-					pkColumnName="CPF",
-					valueColumnName="value",
-					allocationSize=1,
-					initialValue=100)
-	
-	@GeneratedValue(strategy=GenerationType.TABLE,
-					generator="genId")
+//	@TableGenerator(name="genId",
+//					table="sequences",
+//					pkColumnName="CPF",
+//					valueColumnName="value",
+//					allocationSize=1,
+//					initialValue=100)
+//	
+//	@GeneratedValue(strategy=GenerationType.TABLE,
+//					generator="genId")
 	
 	public String getNome() {
 		return nome;
@@ -43,7 +43,7 @@ public class Correntista {
 		RG = rG;
 	}
 	
-	@Id
+//	@Id
 	public String getCPF() {
 		return CPF;
 	}

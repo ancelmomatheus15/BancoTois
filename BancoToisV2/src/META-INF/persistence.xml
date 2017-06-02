@@ -9,7 +9,7 @@
 		  <class>tois.model.Correntista</class>
 		  <class>tois.model.Transacao</class>
           <properties>
-          	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+          	<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.format_sql" value="true"/>
 			<property name="hibernate.show_sql" value="true" />

@@ -14,33 +14,30 @@
 	<h:panelGrid columns="2">
 		
 		<h:outputLabel value="Nome:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.nome}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.nome}"/>
 	
 		<h:outputLabel value="Sobrenome:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.sobrenome}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.sobrenome}"/>
 		
 		<h:outputLabel value="RG:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.RG}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.RG}"/>
 		
 		<h:outputLabel value="CPF:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.CPF}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.CPF}"/>
 		
 		<h:outputLabel value="Endereco:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.endereco}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.endereco}"/>
 		
 		<h:outputLabel value="Nome de Familiar:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.Familiar}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.familiar}"/>
 		
 		<h:outputLabel value="Grau de Parentesco:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.grauParentesco}"/>
+		<h:inputText value="#{correntistaMB.correntistaAtual.grauParentesco}"/>
 		
-		<h:outputLabel value="Nome de Familiar:"/>
-		<h:inputText value="#{CorrentistaMB.correntistaAtual.Familiar}"/>
-				
 	</h:panelGrid>
 	
 	<h3>Emprego</h3>
-			<h:selectOneRadio value="#{CorrentistaMB.correntistaAtual.emprego}">
+			<h:selectOneRadio value="#{correntistaMB.correntistaAtual.emprego}">
 				<f:selectItem itemValue="1" itemLabel="Sim" />
 				<f:selectItem itemValue="0" itemLabel="Nao" />
 		    </h:selectOneRadio>
@@ -75,8 +72,8 @@
 	<br/>
 	<br/>
 	
-	<h:commandButton value="Salvar" action="#{CorrentistaMB.salvar}" />
-	<h:commandLink value="Nova Conta" action="Correntista" />
+	<h:commandButton value="Salvar" action="#{correntistaMB.salvar}" />
+	<h:commandButton value="Cancelar" action="home" />
 	
 	
 </h:body>

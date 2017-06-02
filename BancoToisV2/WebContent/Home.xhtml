@@ -13,16 +13,16 @@
 		<h:panelGrid columns="2" >
 
 			<h:outputLabel value="Numero da Conta :"/>
-			<h:inputText value="#{LoginMB.txtUsuario}"/>
+			<h:inputText value="#{loginMB.txtUsuario}"/>
 
 			<h:outputLabel value="Senha :"/>
-			<h:inputSecret value="#{LoginMB.txtSenha}" />
+			<h:inputSecret value="#{loginMB.txtSenha}" />
 		</h:panelGrid>	
 		<br />
+		<h:commandButton value="Login" action="#{loginMB.logar}" />
+		<h:commandLink value="Nova Conta" outcome="correntista" />
 	</h:form>
 	
-	<h:commandButton value="Login" action="#{LoginMB.logar}" />
-	<h:commandLink value="Nova Conta" action="Correntista" />
 	
 </h:body>
 </html>
