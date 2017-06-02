@@ -72,7 +72,9 @@
 	<br/>
 	<br/>
 	
-	<h:commandButton value="Salvar" action="#{correntistaMB.salvar}" />
+	<h:commandButton value="Salvar" action="#{correntistaMB.salvar}">
+		<f:actionListener action="#{contaMB.salvar}"/>
+	</h:commandButton>
 	<h:commandButton value="Cancelar" action="home" />
 	
 	

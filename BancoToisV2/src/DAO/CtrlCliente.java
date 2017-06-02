@@ -12,14 +12,26 @@ import tois.model.Correntista;
 
 public class CtrlCliente {
 	
-	public static void addCorrentista(Correntista novoCorrentista){
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
-		EntityManager em = factory.createEntityManager();
-		em.getTransaction().begin();
-		em.persist(novoCorrentista);
-		em.getTransaction().commit();
-		em.clear();
-		factory.close();
+	public static String addCorrentista(Correntista novoCorrentista){
+		String aux = "";
+		
+		try{
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
+			EntityManager em = factory.createEntityManager();
+			em.getTransaction().begin();
+			em.persist(novoCorrentista);
+			em.getTransaction().commit();
+			em.clear();
+			factory.close();
+			
+			aux = "Conta";
+			return aux;
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return aux;	
+		
 	}
 	
 	public static void delCliente(Conta conta, Correntista correntista, String senha, String cpf){

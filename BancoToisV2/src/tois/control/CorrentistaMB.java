@@ -3,6 +3,7 @@ package tois.control;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import DAO.CtrlCliente;
 import tois.model.Correntista;
 
 @ManagedBean
@@ -20,8 +21,11 @@ public class CorrentistaMB {
 	}
 
 	public String salvar() {
-		System.out.println("Correntista salvo, numero : " + correntistaAtual.getCPF());
-		return "correntista";
+		String result = "";
+		//System.out.println("Correntista salvo, numero : " + correntistaAtual.getCPF());
+		result = CtrlCliente.addCorrentista(correntistaAtual);
+		
+		return result;
 	}
 	
 	

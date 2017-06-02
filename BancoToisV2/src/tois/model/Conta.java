@@ -2,7 +2,7 @@ package tois.model;
 
 import javax.persistence.*;
 
-
+@Entity
 public class Conta {
 	
 	private Correntista titular;
@@ -16,15 +16,15 @@ public class Conta {
 	
 	
 	
-	@TableGenerator(name="genId",
-					table="sequences",
-					pkColumnName="numConta",
-					valueColumnName="value",
-					allocationSize=1,
-					initialValue=100)
-	
-	@GeneratedValue(strategy=GenerationType.TABLE,
-					generator="genId")
+//	@TableGenerator(name="genId",
+//					table="sequences",
+//					pkColumnName="numConta",
+//					valueColumnName="value",
+//					allocationSize=1,
+//					initialValue=100)
+//	
+//	@GeneratedValue(strategy=GenerationType.TABLE,
+//					generator="genId")
 	
 	
 	public Correntista getTitular() {
@@ -34,7 +34,7 @@ public class Conta {
 		this.titular = titular;
 	}
 	
-	@Id
+//	@Id
 	public int getNumConta() {
 		return numConta;
 	}

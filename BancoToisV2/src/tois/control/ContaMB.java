@@ -5,6 +5,7 @@ import javax.faces.bean.SessionScoped;
 
 import DAO.CtrlConta;
 import tois.model.Conta;
+import tois.model.Correntista;
 
 @ManagedBean
 @SessionScoped
@@ -20,12 +21,10 @@ public class ContaMB {
 		this.contaAtual = contaAtual;
 	}
 
-	public String salvar() {
-		String confirm;
+	public void salvar() {
+
 		CtrlConta.addConta(contaAtual);
-		confirm = "Conta?faces-redirect=true";
 		
-		return confirm;
 	}
 	
 	public String sair(){
