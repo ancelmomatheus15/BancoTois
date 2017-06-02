@@ -11,13 +11,13 @@ public class LoginMB {
 	
 	private String txtUsuario;
 	private String txtSenha;
-	private Correntista corLogado = new Correntista();
+	private Correntista corLogado;
 	
 	public String logar(){
-		String pagina = "login";
+		String pagina = "Home";
 		
 		if("admin".equals(txtUsuario) && "111".equals(txtSenha)){
-			pagina = "";
+			pagina = "Conta";
 			corLogado = new Correntista();
 			corLogado.setNome("Matheus");
 			corLogado.setSobrenome("Ancelmo");
