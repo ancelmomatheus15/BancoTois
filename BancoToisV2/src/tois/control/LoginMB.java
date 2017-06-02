@@ -11,7 +11,7 @@ public class LoginMB {
 	
 	private String txtUsuario;
 	private String txtSenha;
-	private Correntista corLogado;
+	private Correntista corLogado = new Correntista();
 	
 	public String logar(){
 		String pagina = "login";
