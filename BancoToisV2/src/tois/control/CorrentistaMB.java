@@ -22,6 +22,7 @@ public class CorrentistaMB {
 
 	public String salvar() {
 		String result = "";
+		result = correntistaAtual.toString();
 		//System.out.println("Correntista salvo, numero : " + correntistaAtual.getCPF());
 		result = CtrlCliente.addCorrentista(correntistaAtual);
 		
