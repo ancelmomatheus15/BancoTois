@@ -80,5 +80,28 @@ public class CtrlCliente {
 		}
 		return null;
 	}
+	
+	public static boolean validaSenha(String pass){
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManager em = factory.createEntityManager();
+		
+		try{
+			Query query = em.createQuery
+					("SELECT correntista FROM Correntistas where"
+							+ "senha =: pass");
+			query.setParameter("pass", pass);
+			
+			List<Correntista> lista = query.getResultList();
+			
+			if(lista != null && lista.size()>0){
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 
 }

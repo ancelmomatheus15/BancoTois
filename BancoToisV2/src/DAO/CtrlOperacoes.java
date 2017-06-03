@@ -5,28 +5,71 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import tois.model.Conta;
+import tois.model.Transacao;
 
 public class CtrlOperacoes{
 	
-	public static boolean transferencia(int numConta, double valor, String senha){
-		boolean confirm = false;
+	public static String transferencia(int numContaFrom, int contaTo, double valor, String senha){
+		String confirm = "";
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
-		EntityManager em = factory.createEntityManager();
+		Transacao novaTransacao = new Transacao(numContaFrom, contaTo, valor);
 		
+		if(CtrlCliente.validaSenha(senha) == true){
+			try{
+			
+				EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
+				EntityManager em = factory.createEntityManager();
+				em.getTransaction().begin();
+				em.persist(novaTransacao);
+				em.getTransaction().commit();
+				em.clear();
+				factory.close();
+			
+				confirm = "Conta";
+				return confirm;
+			
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		
+		}else{
+			return confirm;
+		}
+	
 		return confirm;
 	}
 	
-	public static boolean deposito(int numConta, double valor, String senha){
+	public static String deposito(int numContaFrom, int contaTo, double valor, String senha){
 		
-		return false;
+		String confirm = "";
+		
+		Transacao novaTransacao = new Transacao(numContaFrom, contaTo, valor);
+		
+		if(CtrlCliente.validaSenha(senha) == true){
+			try{
+			
+				EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
+				EntityManager em = factory.createEntityManager();
+				em.getTransaction().begin();
+				em.persist(novaTransacao);
+				em.getTransaction().commit();
+				em.clear();
+				factory.close();
+			
+				confirm = "Conta";
+				return confirm;
+			
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		
+				return confirm;
+			}else{
+				return confirm;
+		}	
 	}
 }
 
-/*
- * calcular imposto com a taxa e as confirmações pro usuario
- * fazer as validações
- */
 
 
 

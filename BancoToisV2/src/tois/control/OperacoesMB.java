@@ -12,15 +12,16 @@ public class OperacoesMB {
 	
 	private String senha = "";
 	private double valor = 0;
-	private int numConta = 0;
+	private int contaFrom = 0;
+	private int contaTo = 0;
 	
-	public Conta transferir(int numConta, double valor, String senha){
-		CtrlOperacoes.transferencia(numConta, valor, senha);
+	public Conta transferir(int numContaFrom, int numContaTo, double valor, String senha){
+		CtrlOperacoes.transferencia(numContaFrom, numContaTo, valor, senha);
 		return null;
 	}
 	
-	public Conta depositar(int numConta, double valor, String senha){
-		CtrlOperacoes.deposito(numConta, valor, senha);
+	public Conta depositar(int numContaFrom, int numContaTo, double valor, String senha){
+		CtrlOperacoes.deposito(numContaFrom, numContaTo, valor, senha);
 		return null;
 	}
 	
