@@ -24,7 +24,7 @@ public class CtrlCliente {
 			em.clear();
 			factory.close();
 			
-			aux = "Home";
+			aux = "Conta";
 			return aux;
 		}
 		catch(Exception e){
@@ -102,6 +102,5 @@ public class CtrlCliente {
 		}
 		return false;
 	}
-
-
+	
 }

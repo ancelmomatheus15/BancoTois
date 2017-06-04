@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Conta {
 	
-	private Correntista titular;
+	private String CPFtitular;
 	private int numConta;
 	private int numAgencia;
 	private String tipo;
@@ -27,16 +27,17 @@ public class Conta {
 //					generator="genId")
 	
 	
-	public Correntista getTitular() {
-		return titular;
-	}
-	public void setTitular(Correntista titular) {
-		this.titular = titular;
-	}
+
 	
 //	@Id
 	public int getNumConta() {
 		return numConta;
+	}
+	public String getCPFtitular() {
+		return CPFtitular;
+	}
+	public void setCPFtitular(String cPFtitular) {
+		CPFtitular = cPFtitular;
 	}
 	public void setNumConta(int numConta) {
 		this.numConta = numConta;
